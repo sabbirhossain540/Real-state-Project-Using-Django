@@ -78,10 +78,20 @@ WSGI_APPLICATION = 'rsp.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    #Custom Database Setup
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rspdb',
+        'USER': 'postgres',
+        'PASSWORD': '1',
+        'HOST': 'localhost'
     }
+
+    #Default Database Setup
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 
