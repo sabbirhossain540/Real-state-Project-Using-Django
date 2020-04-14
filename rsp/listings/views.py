@@ -12,7 +12,7 @@ def index(request):
     }
     return render(request, 'listings/listings.html', context)
 
-def listing(request):
+def listing(request, listing_id):
     return render(request, 'listings/listing.html')
 
 def search(request):
