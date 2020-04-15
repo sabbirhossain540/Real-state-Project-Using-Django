@@ -25,6 +25,7 @@ def index(request):
 
 #Single Item From The List
 def listing(request, listing_id):
+    #Django 404 Default Page Genarators
     listing = get_object_or_404(Listing, pk=listing_id)
 
     context = {
