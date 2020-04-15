@@ -42,6 +42,19 @@
             </div>
             <div class="col-md-4">
                 {% if mvp_realtors %}
+                    {% for realtor in mvp_realtors %}
+                        <div class="card">
+                            <img class="card-img-top" src="{{ realtor.photo.url }}" alt="Seller of the month">
+                            <div class="card-body">
+                            <h5 class="card-title">Seller Of The Month</h5>
+                            <h6 class="text-secondary">{{ realtor.name }}</h6>
+                            <p class="card-text">{{ realtor.description }}
+                            </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <!-- {% if mvp_realtors %}
                     {% for mvp_realtors in mvp_realtor %}
                         <div class="card">
                             <img class="card-img-top" src="{{ mvp_realtor.photo.url }}" alt="Seller of the month">
@@ -53,7 +66,7 @@
                             </div>
                         </div>
                     {% endfor %}
-                {% endif %}
+                {% endif %} -->
             
 
             </div>
