@@ -7,7 +7,11 @@ def login(request):
 
 
 def register(request):
-    return render(request,'accounts/register.html')
+    if request.method == 'POST':
+        print('submited REG')
+        return redirect('register')
+    else:
+        return render(request,'accounts/register.html')
 
 def logout(request):
     return redirect('index')
