@@ -6,7 +6,25 @@ from django.contrib import auth
 # Create your views here.
 
 def login(request):
-    return render(request,'accounts/login.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            print("You are now Login")
+            return redirect('dashboard')
+        else:
+            print("Invalid User name and Password")
+            return redirect('login')
+
+
+    else:
+        return render(request,'accounts/login.html')
+
+    
 
 
 def register(request):
