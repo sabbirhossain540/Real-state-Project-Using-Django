@@ -66,7 +66,10 @@ def register(request):
         return render(request,'accounts/register.html')
 
 def logout(request):
-    return redirect('index')
+    if request.method == 'POST':
+        auth.logout(request)
+        print("You are successfully Logged out")
+        return redirect('index')
 
 
 def dashboard(request):
