@@ -28,7 +28,7 @@ def contact(request):
 
         #Send Email
         send_mail(
-            'Property Listing Inquery',
+            'Property Listing Inquery From SModule Real Estate',
             'There has been an inquery for '+ listing + '. Sign into the admin panel for more info',
             'ashes545454@gmail.com', #Host mail
             ['job.sabbirhossain308@gmail.com'], #Where We want to sent mail
