@@ -14,6 +14,7 @@ def contact(request):
         user_id = request.POST['user_id']
         realtor_email = request.POST['realtor_email']
 
+        print(realtor_email)
         #Check if user has made inquery already
         if request.user.is_authenticated:
             user_id = request.user.id
@@ -31,7 +32,7 @@ def contact(request):
             'Property Listing Inquery From SModule Real Estate',
             'There has been an inquery for '+ listing + '. Sign into the admin panel for more info',
             'ashes545454@gmail.com', #Host mail
-            ['job.sabbirhossain308@gmail.com'], #Where We want to sent mail
+            ['job.sabbirhossain308@gmail.com',realtor_email], #Where We want to sent mail
             fail_silently=False
         )
 

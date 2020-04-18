@@ -17,10 +17,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            print("You are now Login")
+            messages.success(request, 'Welcome You are Now Logged in!!')
             return redirect('dashboard')
         else:
-            print("Invalid User name and Password")
+            messages.error(request, 'Your username and password not match!!')
             return redirect('login')
 
 
@@ -71,7 +71,7 @@ def register(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        print("You are successfully Logged out")
+        messages.success(request, 'You are successfully Logged out')
         return redirect('index')
 
 
