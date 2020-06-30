@@ -68,6 +68,8 @@ def search(request):
             #lte = Lessthan or Equal To
 
 
+
+
     #Price
     if 'price' in request.GET:
         price = request.GET['price']
