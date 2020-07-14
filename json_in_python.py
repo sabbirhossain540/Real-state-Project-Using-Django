@@ -1,9 +1,6 @@
 
 import json
 
-
-
-
 userJson = '{"firstname": "Sabbir", "lastname": "Hossain", "age": 30}'
 user = json.loads(userJson)
 print(user)
